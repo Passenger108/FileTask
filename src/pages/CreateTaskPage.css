@@ -1,0 +1,99 @@
+
+.create-task-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+.create-task-left,
+.create-task-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 0.8rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 200px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.create-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #3730a3;
+  transform: scale(1.05);
+}
+
+.create-btn:active {
+  transform: scale(0.95);
+  background-color: #312e81;
+}
+
+.desc-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-task-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .create-task-left,
+  .create-task-right {
+    width: 100%;
+  }
+
+  .create-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,65 @@
+/* src/components/TaskCard.css */
+.task-card {
+  background: #fff;
+  border-left: 5px solid var(--border-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+}
+
+.task-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.task-info .task-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.2rem 0;
+}
+
+.task-info .task-desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.task-category {
+  font-style: italic;
+}
+
+/* Optional: color-coding per status */
+.task-card.active {
+  border-color: #00aaff;
+}
+
+.task-card.new {
+  border-color: #ffa500;
+}
+
+.task-card.completed {
+  border-color: #2ecc71;
+}
+
+.task-card.failed {
+  border-color: #e74c3c;
+}
