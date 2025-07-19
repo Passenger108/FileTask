@@ -1,7 +1,9 @@
 import React from "react";
+import {Link, useNavigate} from "react-router-dom"
 import "./AdminPage.css";
 
 const AdminPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="admin-container">
       <div className="admin-left">
@@ -9,8 +11,14 @@ const AdminPage = () => {
       </div>
 
       <div className="admin-right">
-        <button className="admin-button">Create Task</button>
-        <button className="admin-button">Show Employees</button>
+
+          <button className="admin-button" onClick={()=>navigate("createtask")}>
+              Create Task
+          </button>
+
+          <button className="admin-button" onClick={()=>{navigate("employees")}}>
+            Show Employees
+          </button>
       </div>
     </div>
   );

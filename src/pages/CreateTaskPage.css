@@ -97,3 +97,18 @@ textarea {
     width: 100%;
   }
 }
+
+
+
+
+input.ccerror,
+textarea.ccerror {
+  border-color: #dc2626;
+  background-color: #fff1f2;
+}
+
+.ccerror-msg {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+}

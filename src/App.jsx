@@ -2,6 +2,8 @@ import React from "react"
 import {BrowserRouter, Routes, Route } from "react-router-dom"
 import {employees} from "./utils/data"
 
+import DataContext from "./ context/DataContext"
+
 import MainLayout from "./Layouts/MainLayout"
 
 import LoginForm from "./pages/LoginForm"
@@ -16,7 +18,11 @@ import UserDashboard from "./pages/UserDashboard"
 
 
 export default function App() {
+
+  const [database, setDatabase] = React.useState(employees)
+
   return (
+    <DataContext.Provider value={{database,setDatabase}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout/>}>
@@ -32,5 +38,6 @@ export default function App() {
 
       </Routes>
     </BrowserRouter>
+    </DataContext.Provider>
   )
 }
