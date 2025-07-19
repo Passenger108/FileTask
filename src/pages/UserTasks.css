@@ -1,0 +1,140 @@
+/* UserTasks.css */
+
+.x-user-tasks-container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Dashboard */
+.x-task-dashboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.x-task-card {
+  height: 100px;
+  width: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+}
+
+.x-task-card > h3 {
+    font-size: xx-large;
+    margin-bottom: 3px;
+    font-weight: bolder;
+}
+
+
+.x-task-card.newTask {
+  background-color: #3498db;
+}
+
+.x-task-card.active {
+  background-color: #f39c12;
+}
+
+.x-task-card.completed {
+  background-color: #2ecc71;
+}
+
+.x-task-card.failed {
+  background-color: #e74c3c;
+}
+
+/* Filter Navbar */
+.x-task-filter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.x-filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.x-filter-btn:hover,
+.x-filter-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Scrollable Tasks */
+.x-task-card-scroll-container {
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.x-task-cards-scroll {
+  display: flex;
+  gap: 3rem;
+  min-width: max-content;
+}
+
+.x-task-item {
+
+display: flex;
+gap: 2rem;
+flex-direction: column;
+justify-content: space-between;
+
+  background: #f9f9f9;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  width: 500px;
+  height: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task actions */
+.x-task-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.x-task-actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.x-task-actions .complete {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.x-task-actions .fail {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.x-task-actions .accept {
+  background-color: #f39c12;
+  color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.98);
+    opacity: 0.7;
+}

@@ -1,0 +1,52 @@
+
+
+.y-user-dashboard {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.y-user-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.y-user-header p {
+  margin-top: 0.4rem;
+  color: #555;
+}
+
+.y-user-filter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.y-filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.y-filter-btn.active,
+.y-filter-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.y-user-scroll-container {
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+

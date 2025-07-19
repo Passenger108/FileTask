@@ -1,0 +1,108 @@
+/* Base Container */
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+/* Left Side */
+.user-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeInLeft 0.7s ease-out;
+}
+
+/* Right Side */
+.user-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Giant Button */
+.user-button {
+  width: 70%;
+  padding: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 114, 255, 0.2);
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+/* Hover and Active Effects */
+.user-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 114, 255, 0.4);
+}
+
+.user-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-left, .user-right {
+    width: 100%;
+  }
+
+  .user-button {
+    width: 80%;
+  }
+
+  .welcome-text {
+    font-size: 2.2rem;
+  }
+}
