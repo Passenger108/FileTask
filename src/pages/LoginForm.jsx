@@ -15,7 +15,7 @@ const LoginForm = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  // console.log(location.state.pathname.includes("admin"), "admin?")
+  console.log("pathname",location.state?.pathname)
   const validate = () => {
     const newErrors = {};
 
@@ -55,7 +55,7 @@ const LoginForm = () => {
         console.log("redirect",location.state?.pathname)
         if(previledgedRoute){
           if(loginCred.isAdmin)
-            navigate(location.state?.pathname||"/filetask/admin");
+            navigate(location.state?.pathname);
           else
             navigate("/filetask/user")
         }else{

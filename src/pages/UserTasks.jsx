@@ -1,14 +1,36 @@
 import React, { useState } from "react";
 import "./UserTasks.css";
 
+import DataContext from "../ context/DataContext";
+import LoginContext from "../ context/LoginContext";
+
+
+
 
 const UserTasks = ({ user }) => {
   const [filter, setFilter] = useState("all");
-    console.log(user)
+
+  const server = React.useContext(DataContext)
+  const secret = React.useContext(LoginContext)
+
+    console.log(server.database)
   const filteredTasks =
     filter === "all"
       ? user.tasks.filter((t) => t.status === "newTask" || t.status === "active")
       : user.tasks.filter((t) => t.status === filter);
+
+
+    function handleClick(targetTaskId, oldStatus ,newStatus){
+      let {taskCounts,tasks}=secret.loginCred.emp;
+      taskCounts[oldStatus]--; //direct manipulation
+      taskCounts[newStatus]++; //direct manipulation
+
+      tasks = tasks.map(task => ( task.id!=targetTaskId? task: ({...task,status:newStatus})))
+
+      server.setDatabase(old =>old.map(emp => (emp.id!=secret.loginCred.emp.id)?emp:{...emp,taskCounts,tasks}))
+      console.log("Updated loggin:",secret.loginCred.emp)
+      secret.setLoginCred((loginCred)=>({...loginCred,emp:({...loginCred.emp,taskCounts,tasks})}))
+    }
 
   return (
     <div className="x-user-tasks-container">
@@ -54,13 +76,13 @@ const UserTasks = ({ user }) => {
               <p><strong>Category:</strong> {task.category}</p>
               {task.status === "active" && (
                 <div className="x-task-actions">
-                  <button className="complete">Mark Complete</button>
-                  <button className="fail">Mark Failed</button>
+                  <button className="complete" onClick={()=>handleClick(task.id,"active","completed")}>Mark Complete</button>
+                  <button className="fail" onClick={()=>handleClick(task.id,"active","failed")}>Mark Failed</button>
                 </div>
               )}
               {task.status === "newTask" && (
                 <div className="x-task-actions">
-                  <button className="accept">Accept Task</button>
+                  <button className="accept" onClick={()=>handleClick(task.id,"newTask","active")}>Accept Task</button>
                 </div>
               )}
             </div>
