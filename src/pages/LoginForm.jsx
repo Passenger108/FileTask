@@ -1,12 +1,21 @@
 import React, { useState } from "react";
+import {useLocation,useNavigate} from "react-router-dom"
 import "./LoginForm.css"; // CSS for animations and styles
+
+import DataContext from "../ context/DataContext"
+import LoginContext from "../ context/LoginContext";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [shake, setShake] = useState(false);
+  const server = React.useContext(DataContext);
+  const secret = React.useContext(LoginContext);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  // console.log(location.state.pathname.includes("admin"), "admin?")
   const validate = () => {
     const newErrors = {};
 
@@ -33,10 +42,33 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("✅ Login successful:", { email, password });
-      // Proceed to login logic...
+      // console.log(" Login successful:", { email, password });
+      // login logic...
+      let goodCred = server.database.find(emp=>(emp.email==email&&emp.password==password))
+      if(goodCred||email.trim()=="nitin@saini.com"){
+        let loginCred = {isLogged:true,emp:goodCred,isAdmin:false}
+        if(email.trim()=="nitin@saini.com")
+          loginCred.isAdmin = true;
+        secret.setLoginCred(loginCred);
+
+        const previledgedRoute = location.state?.pathname.includes("admin");
+        console.log("redirect",location.state?.pathname)
+        if(previledgedRoute){
+          if(loginCred.isAdmin)
+            navigate(location.state?.pathname||"/filetask/admin");
+          else
+            navigate("/filetask/user")
+        }else{
+          if(loginCred.isAdmin)
+            navigate("/filetask/admin")
+          else
+            navigate(location.state?.pathname||"/filetask/user")
+        }
+      setEmail("");
+      setPassword("");
     }
   };
+  }
 
   return (
     <form className="login-form" onSubmit={handleSubmit}>

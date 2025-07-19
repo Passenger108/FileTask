@@ -12,6 +12,11 @@ const UserTasks = ({ user }) => {
 
   return (
     <div className="x-user-tasks-container">
+
+    <header className="y-user-header">
+        <h2>Hello, {user.name} 👋</h2>
+      </header>
+
       {/* Dashboard */}
       <section className="x-task-dashboard">
         {Object.entries(user.taskCounts).map(([status, count]) => (

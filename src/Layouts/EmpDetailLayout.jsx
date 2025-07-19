@@ -58,7 +58,7 @@ const EmpDetailLayout = () => {
       <EmpCard employee={emp} /> {/* Could be dynamic fetch by ID */}
       
       <nav className="task-filter-nav">
-        {["all", "active", "new", "completed", "failed"].map((status) => (
+        {["all", "active", "newTask", "completed", "failed"].map((status) => (
           <button
             key={status}
             className={`filter-btn ${filter === status ? "active" : ""}`}

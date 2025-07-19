@@ -82,7 +82,7 @@ const CreateTaskPage = () => {
     console.log("new database",[...newDatabase,targetEmp])
     server.setDatabase([...newDatabase,targetEmp])
 
-     navigate("/admin")
+     navigate("/filetask/admin")
   };
 
   return (

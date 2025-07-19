@@ -1,7 +1,9 @@
 import React from "react";
 import "./UserPage.css";
+import {useNavigate} from "react-router-dom"
 
 const UserPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="user-container">
       <div className="user-left">
@@ -9,8 +11,8 @@ const UserPage = () => {
       </div>
 
       <div className="user-right">
-        <button className="user-button">Show Tasks</button>
-        <button className="user-button">Take Actions</button>
+        <button className="user-button" onClick={()=>navigate("tasks")}>Show Tasks</button>
+        <button className="user-button" onClick={()=>navigate("action")}>Take Actions</button>
       </div>
     </div>
   );
