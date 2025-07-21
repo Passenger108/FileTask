@@ -18,6 +18,11 @@
   min-width: 300px;
 }
 
+.eye {
+  font-size:x-large;
+  transform: translate(-180%,25%);
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -32,6 +37,7 @@ label {
 
 
 input{
+  width: 90%;
   padding: 0.8rem 1rem;
   border: 2px solid #ccc;
   border-radius: 8px;

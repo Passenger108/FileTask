@@ -1,6 +1,7 @@
 import React, { useState,useContext } from 'react';
 import DataContext from "../ context/DataContext"
 import './CreateNewEmployee.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // import { employees } from '../utils/data'; 
 
 import {useNavigate} from "react-router-dom"
@@ -13,11 +14,15 @@ const CreateNewEmployee = () => {
     password : ''
   });
   const [errors, setErrors] = useState({});
-
+  const[showPassword,setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const server = useContext(DataContext);
   const employees = server.database
+
+   function handleEye(){
+    setShowPassword(value=>!value)
+  } 
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -84,15 +89,20 @@ const CreateNewEmployee = () => {
       <div className="create-new-left">
         {['name', 'email', 'password'].map((field) => (
           <div className="form-group" key={field}>
-            <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
+            <label htmlFor={field}>
+                {field.charAt(0).toUpperCase() + field.slice(1)} 
+            </label>
+            <div className='input-container'>
             <input
-              type={field === password ? 'password': 'text'}
+              type={field === "password" && !showPassword ? 'password': 'text'}
               id={field}
               value={formData[field]}
               onChange={handleChange}
               className={errors[field] ? 'ccerror' : ''}
               placeholder={`Enter ${field}`}
             />
+            {field=='password' ? (showPassword ? <FaEye className='eye' onClick={handleEye} /> : <FaEyeSlash className='eye' onClick={handleEye}/>): null}
+            </div>
             {errors[field] && <p className="ccerror-msg">{errors[field]}</p>}
           </div>
         ))}
