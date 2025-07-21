@@ -5,11 +5,17 @@ import EmpCard from "../components/EmpCard";
 import TaskCard from "../components/TaskCard";
 import "./EmpDetailLayout.css";
 
+import DataContext from "../ context/DataContext";
+
 
 const EmpDetailLayout = () => {
+
+  const server = React.useContext(DataContext)
+
   const { id } = useParams(); // Get employee ID from URL
+  //  id  = id || location.pathname.split('/')[4]; // during direct url visit...
   const location = useLocation();
-  const emp = location.state;
+  const emp = location.state || server.database.find(emp=>emp.id==location.pathname.split('/')[4]);
   const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (status) => setFilter(status);

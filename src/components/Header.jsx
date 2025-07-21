@@ -20,7 +20,7 @@ const Header = ({ onLogout }) => {
       <div className="header-right">
         {location.pathname.split('/').length>3
           &&
-          <button className="back-btn" onClick={()=>navigate(-1)}>
+          <button className="back-btn" onClick={()=>navigate("..",{relative:"path"})}>
             {"< Back" }
           </button>
         }
