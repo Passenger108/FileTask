@@ -49,7 +49,12 @@ const LoginForm = () => {
     if (validate()) {
       // console.log(" Login successful:", { email, password });
       // login logic...
-      let goodCred = server.database.find(emp=>(emp.email==email&&emp.password==password))
+
+      let emailQueryEntry,passwordQueryStat;
+
+      emailQueryEntry = server.database.find(emp=>emp.email==email)
+      passwordQueryStat = emailQueryEntry?.password == password
+      let goodCred = passwordQueryStat && emailQueryEntry;
       if(goodCred||email.trim()=="nitin@saini.com"){
         let loginCred = {isLogged:true,emp:goodCred,isAdmin:false}
         if(email.trim()=="nitin@saini.com")
@@ -71,6 +76,15 @@ const LoginForm = () => {
         }
       setEmail("");
       setPassword("");
+    }else{
+        const newErrors = {}
+        if(!emailQueryEntry)
+            newErrors.email = "No Such User Exit!"
+        else if(!passwordQueryStat)
+            newErrors.password = "Wrong Password bro !"
+
+        setErrors(newErrors)
+       
     }
   };
   }
