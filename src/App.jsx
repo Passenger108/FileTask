@@ -11,6 +11,7 @@ import LoginForm from "./pages/LoginForm"
 import AdminPage from "./pages/AdminPage"
 import UserPage from "./pages/UserPage"
 import CreateTaskPage from "./pages/CreateTaskPage"
+import CreateNewEmployee from "./pages/CreateNewEmployee"
 import Employees from "./pages/Employees"
 import EmpDetailLayout from "./Layouts/EmpDetailLayout"
 import UserTasks from "./pages/UserTasks"
@@ -42,6 +43,7 @@ export default function App() {
 
           <Route path="admin" element={<AdminPage />}/>
           <Route path="admin/createtask" element={<CreateTaskPage/>}/>
+          <Route path="admin/createnewemployee" element={<CreateNewEmployee/>}/>
           <Route path="admin/employees" element={<Employees/>}/>
           <Route path="admin/employees/:id" element={<EmpDetailLayout/>} />
         </Route>
