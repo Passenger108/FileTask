@@ -181,13 +181,6 @@ To simplify session management:
 
 
 
-## 🚀 Live Demo
-
-🔗 **[Live Demo Link](https://your-deployed-app-link.com)**  
-_(Replace with your actual deployed link)_
-
----
-
 ## 🧪 Want to Explore the App?
 
 🌐 https://filetask.netlify.app/
@@ -201,7 +194,8 @@ For demonstration and quick testing, feel free to log in as any of the existing 
 ## 🧪 Test Users
 
 ### 👤 Employee Users
-    📝 All employees share the same short password just for fast testing. When creating a new employee, Admin can assign stronger passwords (if feeling evil 😈).
+
+- 📝 All employees share the same short password just for fast testing. When creating a new employee, Admin can assign stronger passwords (if feeling evil 😈).
 | Email              | Password |
 |--------------------|----------|
 | ravi@saini.com     | 123      |
@@ -233,56 +227,56 @@ For demonstration and quick testing, feel free to log in as any of the existing 
 
 🏗️ Tech 
 
-React	Core SPA framework
-React Router v6	Dynamic and protected routing
-Context API	Global state (auth, user data, task data)
-CSS Modules	Component-scoped styling
-HTML5 Forms	Input restrictions, validation
-React Icons	Eye / show-hide toggle on password field
+# *React*	Core SPA framework
+# *React Router v6*	Dynamic and protected routing
+# *Context API*	Global state (auth, user data, task data)
+# *CSS Modules*	Component-scoped styling
+# *HTML5 Forms*	Input restrictions, validation
+# *React Icons*	Eye / show-hide toggle on password field
 
 
 ⸻
 
-💡 Key Features
-	•	Role-Based Login System
-	•	Context-Driven State Management
-	•	Admin Task Assignment Workflow
-	•	User Dashboard with Action Panel
-	•	Protected Routes with session-based access
-	•	Password Toggle Eye Button
-	•	Back Navigation Handling (Auto logout when trying to go back from dashboard)
-	•	Initial Mock Database using Context
-	•	Detailed Form Validation Errors
-	•	User-based Dynamic UI
-	•	Image placeholder support (structure ready to accept employee profile images)
+## 💡 Key Features
+- Role-Based Login System
+- Context-Driven State Management
+- Admin Task Assignment Workflow
+- User Dashboard with Action Panel
+- Protected Routes with session-based access
+- Password Toggle Eye Button
+- Back Navigation Handling (Auto logout when trying to go back from dashboard)
+- Initial Mock Database using Context
+- Detailed Form Validation Errors
+- User-based Dynamic UI
+- Image placeholder support (structure ready to accept employee profile images)
 
 ⸻
 
-🧪 Realistic UX Additions
-	•	URL sharing support: User can open shared link, log in, and view only permitted data.
-	•	One login session: Session is shared app-wide using context.
-	•	Navigation protection: Back button behavior logs out immediately (to be improved in future).
-	•	Logout button: Clears user session and returns to /.
+## 🧪 Realistic UX Additions
+-	URL sharing support: User can open shared link, log in, and view only permitted data.
+-	One login session: Session is shared app-wide using context.
+-	Navigation protection: Back button behavior logs out immediately (to be improved in future).
+-	Logout button: Clears user session and returns to /.
 
 ⸻
 
-🤝 Final Thoughts
+## 🤝 Final Thoughts
 
 This app was built to demonstrate frontend architecture, logic, and creativity. It reflects practical understanding of:
-	•	Handling protected routing and role-based flows
-	•	Working with React Context for global state
-	•	Creating reusable, scoped UI components
-	•	Mimicking real-world task assignment workflows
+-	Handling protected routing and role-based flows
+-	Working with React Context for global state
+-	Creating reusable, scoped UI components
+-	Mimicking real-world task assignment workflows
 
 Try it, break it, fix it, and maybe improve it 😉. You can fork this repo and build your version of FileTask.
 
-Happy Hacking! 🚀
+**Happy Hacking!** 🚀
 
 ⸻
 
-🙋‍♂️ Built by Nitin Saini
+🙋‍♂️ Built by ***Nitin Saini***
 
-LinkedIn → www.linkedin.com/in/passenger-1o8
+# LinkedIn → www.linkedin.com/in/passenger-1o8
 
 ⸻
 Use freely, but give credit if you love it ❤️
