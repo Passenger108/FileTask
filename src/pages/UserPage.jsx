@@ -1,13 +1,16 @@
 import React from "react";
 import "./UserPage.css";
 import {useNavigate} from "react-router-dom"
+import LoginContext from "../ context/LoginContext"
 
 const UserPage = () => {
   const navigate = useNavigate();
+  const secret = React.useContext(LoginContext)
+
   return (
     <div className="user-container">
       <div className="user-left">
-        <h1 className="welcome-text">Welcome back, User!</h1>
+        <h1 className="welcome-text">{`Welcome back\n,${secret.loginCred.emp.name}!`}</h1>
       </div>
 
       <div className="user-right">

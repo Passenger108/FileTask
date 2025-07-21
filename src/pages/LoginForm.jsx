@@ -5,6 +5,8 @@ import "./LoginForm.css"; // CSS for animations and styles
 import DataContext from "../ context/DataContext"
 import LoginContext from "../ context/LoginContext";
 
+import useConfirmLogout from "../customHooks/useConfirmLogout";
+
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,9 +15,12 @@ const LoginForm = () => {
   const server = React.useContext(DataContext);
   const secret = React.useContext(LoginContext);
 
+  if(secret.loginCred.isLogged)
+      secret.setLoginCred({isLogged:false,emp:null,isAdmin:false})
+
   const location = useLocation();
   const navigate = useNavigate();
-  console.log("pathname",location.state?.pathname)
+  // console.log("pathname",location.state?.pathname)
   const validate = () => {
     const newErrors = {};
 

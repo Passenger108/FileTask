@@ -1,9 +1,16 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useNavigate,useLocation} from "react-router-dom"
 import "./AdminPage.css";
 
 const AdminPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+
+  React.useEffect(()=>{
+    console.log("User clicked back button when at admin page");
+  },[location.pathname])
+
   return (
     <div className="admin-container">
       <div className="admin-left">

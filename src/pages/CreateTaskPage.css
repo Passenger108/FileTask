@@ -31,7 +31,9 @@ label {
   color: #333;
 }
 
+
 input,
+select,
 textarea {
   padding: 0.8rem 1rem;
   border: 2px solid #ccc;
@@ -41,6 +43,7 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   outline: none;
   border-color: #4f46e5;
@@ -100,7 +103,7 @@ textarea {
 
 
 
-
+select.ccerror,
 input.ccerror,
 textarea.ccerror {
   border-color: #dc2626;

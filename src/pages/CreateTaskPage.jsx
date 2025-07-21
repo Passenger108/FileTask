@@ -88,20 +88,38 @@ const CreateTaskPage = () => {
   return (
     <div className="create-task-container">
       <div className="create-task-left">
-        {['title', 'date', 'assignedTo', 'category'].map((field) => (
+        {['title', 'date', 'category'].map((field) => (
           <div className="form-group" key={field}>
-            <label htmlFor={field}>{field === 'assignedTo' ? 'Assigned To' : field.charAt(0).toUpperCase() + field.slice(1)}</label>
+            <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
             <input
               type={field === 'date' ? 'date' : 'text'}
               id={field}
               value={formData[field]}
               onChange={handleChange}
               className={errors[field] ? 'ccerror' : ''}
-              placeholder={field === 'assignedTo' ? 'Employee ID' : `Enter ${field}`}
+              placeholder={`Enter ${field}`}
             />
             {errors[field] && <p className="ccerror-msg">{errors[field]}</p>}
           </div>
         ))}
+
+        <div className="form-group">
+            <label htmlFor="assignedTo">Assigned To</label>
+            <select 
+                id='assignedTo' 
+                className={errors["assignedTo"] ? 'ccerror' : ''}
+                onChange={handleChange}
+                defaultValue={0}
+                required   
+            >
+                <option disabled value={0}>--Select--Employee--</option>
+              {
+                employees.map(emp=>(<option key={emp.id} value={emp.id}>{`${emp.id}. ${emp.name}`}</option>))
+              }
+            </select>
+
+        </div>
+
       </div>
 
       <div className="create-task-right">
