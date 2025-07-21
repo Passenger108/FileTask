@@ -5,9 +5,10 @@ import './CreateTaskPage.css';
 import {useNavigate} from "react-router-dom"
 
 const CreateTaskPage = () => {
+  const today = new Date().toISOString().split("T")[0];
   const [formData, setFormData] = useState({
     title: '',
-    date: '',
+    date: today,
     assignedTo: '',
     category: '',
     description: '',
@@ -16,6 +17,7 @@ const CreateTaskPage = () => {
   const navigate = useNavigate();
   const server = useContext(DataContext);
   const employees = server.database
+
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -36,7 +38,7 @@ const CreateTaskPage = () => {
       newErrors.date = 'Date is required';
     }
 
-    if (!formData.assignedTo.trim()) {
+    if (!formData.assignedTo) {
       newErrors.assignedTo = 'Assigned To is required';
     } else if (!employees.some(emp => emp.id == formData.assignedTo)) {
       newErrors.assignedTo = 'No such employee exists';
@@ -94,7 +96,8 @@ const CreateTaskPage = () => {
             <input
               type={field === 'date' ? 'date' : 'text'}
               id={field}
-              value={formData[field]}
+              value={field==='date' ? today :formData[field]}
+              disabled={field==='date'}
               onChange={handleChange}
               className={errors[field] ? 'ccerror' : ''}
               placeholder={`Enter ${field}`}
@@ -120,7 +123,7 @@ const CreateTaskPage = () => {
                 employees.map(emp=>(<option key={emp.id} value={emp.id}>{`${emp.id}. ${emp.name}`}</option>))
               }
             </select>
-
+              {errors["assignedTo"] && <p className="ccerror-msg">{errors["assignedTo"]}</p>}
         </div>
         
         <label htmlFor="description" className="desc-label">Task Description</label>
