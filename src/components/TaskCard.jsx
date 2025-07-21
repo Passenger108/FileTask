@@ -7,7 +7,7 @@ const TaskCard = ({ task }) => {
 
   return (
     <div className={`task-card ${status}`}>
-      <div className="task-status">{status.toUpperCase()}</div>
+      <div className={`task-status ${status}`}>{status.toUpperCase()}</div>
       <div className="task-info">
         <h3 className="task-title">{taskTitle}</h3>
         <p className="task-desc">{taskDescription}</p>

@@ -1,7 +1,7 @@
 /* src/components/TaskCard.css */
 .task-card {
   background: #fff;
-  border-left: 5px solid var(--border-color);
+  border-left: 0.5rem solid ;
   padding: 1rem;
   margin: 1rem 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -48,18 +48,32 @@
 }
 
 /* Optional: color-coding per status */
+.task-status.active{
+  color: #ffa500;
+}
 .task-card.active {
+  border-color: #ffa500;
+
+}
+
+.task-status.newTask{
+  color: #00aaff;
+}
+.task-card.newTask {
   border-color: #00aaff;
 }
 
-.task-card.new {
-  border-color: #ffa500;
+.task-status.completed{
+  color: #2ecc71;
 }
-
 .task-card.completed {
   border-color: #2ecc71;
 }
 
+
+.task-status.failed{
+  color: #e74c3c;
+}
 .task-card.failed {
   border-color: #e74c3c;
 }

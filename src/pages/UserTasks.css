@@ -35,11 +35,11 @@
 
 
 .x-task-card.newTask {
-  background-color: #3498db;
+  background-color: #00aaff;
 }
 
 .x-task-card.active {
-  background-color: #f39c12;
+  background-color: #ffa500;
 }
 
 .x-task-card.completed {
@@ -101,7 +101,7 @@ justify-content: space-between;
   border-radius: 6px;
   width: 500px;
   height: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 0.3);
 }
 
 /* Task actions */
@@ -130,7 +130,7 @@ justify-content: space-between;
 }
 
 .x-task-actions .accept {
-  background-color: #f39c12;
+  background-color: #00aaff;
   color: white;
 }
 
@@ -141,4 +141,11 @@ button:hover {
 button:active {
     transform: scale(0.98);
     opacity: 0.7;
+}
+
+.empty-msg {
+  position: absolute;
+  left: 45%;
+  font-size: x-large;
+  color: #797575;
 }

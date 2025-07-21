@@ -4,12 +4,13 @@
   padding: 1.5rem;
   max-width: 900px;
   margin: 0 auto;
+  color: #514e4e;
 }
 
 .y-user-header h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #333;
+  color: #6c6767;
 }
 
 .y-user-header p {

@@ -65,6 +65,7 @@ const UserTasks = ({ user }) => {
       {/* Task Card Scroll Container */}
       <div className="x-task-card-scroll-container">
         <div className="x-task-cards-scroll">
+          {filteredTasks.length==0 && <p className="empty-msg">Empty Category</p>}
           {filteredTasks.map((task) => (
             <div key={task.id} className="x-task-item">
               <div className="x-task-item-s1">
