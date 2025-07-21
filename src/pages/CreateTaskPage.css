@@ -9,7 +9,7 @@
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   flex-wrap: wrap;
 }
 
@@ -50,8 +50,8 @@ textarea:focus {
 }
 
 textarea {
-  resize: vertical;
-  min-height: 200px;
+  resize: none;
+  min-height: 150px;
   width: 100%;
   margin-bottom: 1rem;
 }

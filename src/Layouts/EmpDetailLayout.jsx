@@ -73,7 +73,7 @@ const EmpDetailLayout = () => {
         {filteredTasks.length ? (
           filteredTasks.map((task) => <TaskCard key={task.taskTitle} task={task} />)
         ) : (
-          <p className="no-tasks">No tasks found.</p>
+          <p className="no-tasks">No task found</p>
         )}
       </div>
     </div>

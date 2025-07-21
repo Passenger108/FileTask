@@ -1,8 +1,8 @@
 .emp-card {
   display: flex;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin: 1rem 0;
   transition: transform 0.2s ease;

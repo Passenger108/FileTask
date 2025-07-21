@@ -1,5 +1,6 @@
 import React from "react"
 import DataContext from '../ context/DataContext';
+import "./Employees.css"
 
 import EmpCard from '../components/EmpCard';
 import {Link} from "react-router-dom"

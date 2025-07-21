@@ -102,8 +102,11 @@ const CreateTaskPage = () => {
             {errors[field] && <p className="ccerror-msg">{errors[field]}</p>}
           </div>
         ))}
+      </div>
 
-        <div className="form-group">
+      <div className="create-task-right">
+        
+         <div className="form-group">
             <label htmlFor="assignedTo">Assigned To</label>
             <select 
                 id='assignedTo' 
@@ -119,10 +122,7 @@ const CreateTaskPage = () => {
             </select>
 
         </div>
-
-      </div>
-
-      <div className="create-task-right">
+        
         <label htmlFor="description" className="desc-label">Task Description</label>
         <textarea
           id="description"
