@@ -52,7 +52,7 @@ const LoginForm = () => {
 
       let emailQueryEntry,passwordQueryStat;
 
-      emailQueryEntry = server.database.find(emp=>emp.email==email)
+      emailQueryEntry = server.database.find(emp=>emp.email==email.toLowerCase())
       passwordQueryStat = emailQueryEntry?.password == password
       let goodCred = passwordQueryStat && emailQueryEntry;
       if(goodCred||email.trim()=="nitin@saini.com"){

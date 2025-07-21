@@ -10,7 +10,7 @@ const UserPage = () => {
   return (
     <div className="user-container">
       <div className="user-left">
-        <h1 className="welcome-text">{`Welcome back\n,${secret.loginCred.emp.name}!`}</h1>
+        <h1 className="welcome-text">{`Welcome back,${secret.loginCred.emp.name.split(' ')[0]}!`}</h1>
       </div>
 
       <div className="user-right">

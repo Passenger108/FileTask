@@ -4,8 +4,11 @@
   padding: 30px;
   border-radius: 10px;
   background: #f9f9f9;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
   font-family: Arial, sans-serif;
+  min-width: 40%;
+  min-height: 50%;
+  transform: translateY(50%);
 }
 
 h2 {

@@ -1,7 +1,7 @@
 /* UserTasks.css */
 
 .x-user-tasks-container {
-  padding: 1rem;
+  padding: 3rem;
   font-family: Arial, sans-serif;
 }
 
@@ -12,6 +12,10 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.x-user-header {
+  color: #797575;
 }
 
 .x-task-card {

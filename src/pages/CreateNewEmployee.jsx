@@ -68,8 +68,8 @@ const CreateNewEmployee = () => {
     // handling new employee  addition logic ...
     let newEmployee = {
         id:employees.count + 1,
-        name:formData.name,
-        email:formData.email,
+        name:formData.name.split(' ').map(word=>word[0].toUpperCase()+word.slice(1)).join(''),
+        email:formData.email.toLowerCase(),
         password:formData.password,
         nextId:1,
         taskCounts: { active: 0, newTask: 0, completed: 0, failed: 0 },

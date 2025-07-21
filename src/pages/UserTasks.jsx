@@ -35,8 +35,8 @@ const UserTasks = ({ user }) => {
   return (
     <div className="x-user-tasks-container">
 
-    <header className="y-user-header">
-        <h2>Hello, {user.name} 👋</h2>
+    <header className="x-user-header">
+        <h2>Time to act, {user.name.split(' ')[0]}!! </h2>
       </header>
 
       {/* Dashboard */}

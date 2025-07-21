@@ -16,7 +16,7 @@ const UserDashboard = ({ user }) => {
   return (
     <div className="y-user-dashboard">
       <header className="y-user-header">
-        <h2>Hello, {name} 👋</h2>
+        <h2>Hello, {name.split(' ')[0]} 👋</h2>
         <p>Here's a quick look at your tasks</p>
       </header>
 
@@ -34,7 +34,7 @@ const UserDashboard = ({ user }) => {
 
       <div className="y-user-scroll-container">
         {filteredTasks.length === 0 ? (
-          <p className="no-tasks-msg">No tasks found for {activeFilter}.</p>
+          <p className="no-tasks-msg">No tasks found for {activeFilter}</p>
         ) : (
           filteredTasks.map((task) => <TaskCard key={task.id} task={task} />)
         )}

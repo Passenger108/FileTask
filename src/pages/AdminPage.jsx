@@ -14,7 +14,7 @@ const AdminPage = () => {
       <div className="admin-right">
 
           <button className="admin-button" onClick={()=>navigate("createtask")}>
-              Create Task
+              Create New Task
           </button>
 
           <button className="admin-button" onClick={()=>navigate("createnewemployee")}>
@@ -22,7 +22,7 @@ const AdminPage = () => {
           </button>
 
           <button className="admin-button" onClick={()=>{navigate("employees")}}>
-            Show Employees
+            Employees Status
           </button>
       </div>
     </div>

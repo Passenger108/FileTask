@@ -42,11 +42,18 @@
 }
 
 .y-user-scroll-container {
-  max-height: 400px;
+  max-height: 550px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0.25rem;
 }
 
 
+.no-tasks-msg {
+  text-align: center;
+  font-size: x-large;
+  color: #838181;
+  
+}
