@@ -2,9 +2,11 @@
 import React from 'react';
 import './Header.css';
 
-import {Link} from "react-router-dom"
+import {Link, useNavigate, useLocation} from "react-router-dom"
 
 const Header = ({ onLogout }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <header className="header">
       <div className="header-left">
@@ -16,8 +18,14 @@ const Header = ({ onLogout }) => {
 
       </div>
       <div className="header-right">
+        {location.pathname.split('/').length>3
+          &&
+          <button className="back-btn" onClick={()=>navigate(-1)}>
+            {"< Back" }
+          </button>
+        }
         <button className="logout-btn" onClick={onLogout}>
-          Logout
+          Logout 
         </button>
       </div>
     </header>

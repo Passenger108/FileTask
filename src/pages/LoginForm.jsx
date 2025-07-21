@@ -5,7 +5,6 @@ import "./LoginForm.css"; // CSS for animations and styles
 import DataContext from "../ context/DataContext"
 import LoginContext from "../ context/LoginContext";
 
-import useConfirmLogout from "../customHooks/useConfirmLogout";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
