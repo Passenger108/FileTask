@@ -69,7 +69,7 @@ _______
 
 All UI interactions are driven by data. State and routing are implemented in a way that ensures smooth UX, data security, and role-based restrictions.
 
-⸻
+
 
 🔐 **Login System**
 
@@ -79,7 +79,7 @@ A single login page is shared by both Admins and Employees.
 - Invalid login attempts are gracefully handled with proper form validation and clear error messages.
 - Authenticated sessions are securely persisted using React’s Context API, ensuring protected routes and controlled access throughout the app.
 
-⸻
+
 
 ## 🧠 Design Overview
 
@@ -115,7 +115,7 @@ This section outlines the key architectural and UI decisions that shaped the pro
 
 ⸻
 
----
+
 
 ## 🧬 State Management
 
@@ -125,7 +125,7 @@ Instead of using Redux or any external state management libraries, I used **Reac
 - Logged-in user’s credentials and role.
 - The login flow that drives UI rendering and access control across routes.
 
----
+
 
 ## 🚥 Routing Logic
 
@@ -136,7 +136,7 @@ The app follows a role-based route restriction model:
 - If a user tries to access unauthorized routes directly (e.g., via browser URL bar), they are **blocked or redirected** based on their role.
 - **Link sharing is supported**: If a valid user logs in and visits a shared route directly, the app correctly renders the view based on their session context.
 
----
+
 
 ## ⚠️ Back Button Handling
 
@@ -189,27 +189,27 @@ Play with the app and test every route. Log in either as Admin or Employee:
 
 For demonstration and quick testing, feel free to log in as any of the existing users or the admin to test every feature with ease.
 
----
+
 
 ## 🧪 Test Users
 
 ### 👤 Employee Users
 
 - 📝 All employees share the same short password just for fast testing. When creating a new employee, Admin can assign stronger passwords (if feeling evil 😈).
-| Email              | Password |
-|--------------------|----------|
-| ravi@saini.com     | 123      |
-| simran@saini.com   | 123      |
-| arjun@saini.com    | 123      |
-| meena@saini.com    | 123      |
-| aman@saini.com     | 123      |
-| tanya@saini.com    | 123      |
-| karan@saini.com    | 123      |
-| pooja@saini.com    | 123      |
-| nikhil@saini.com   | 123      |
-| divya@saini.com    | 123      |
-| ritika@saini.com   | 123      |
-| yash@saini.com     | 123      |
+- | Email              | Password |
+- |--------------------|----------|
+- | ravi@saini.com     | 123      |
+- | simran@saini.com   | 123      |
+- | arjun@saini.com    | 123      |
+- | meena@saini.com    | 123      |
+- | aman@saini.com     | 123      |
+- | tanya@saini.com    | 123      |
+- | karan@saini.com    | 123      |
+- | pooja@saini.com    | 123      |
+- | nikhil@saini.com   | 123      |
+- | divya@saini.com    | 123      |
+- | ritika@saini.com   | 123      |
+- | yash@saini.com     | 123      |
 
 ### 👑 Admin
 
@@ -225,17 +225,17 @@ For demonstration and quick testing, feel free to log in as any of the existing 
 
 
 
-🏗️ Tech 
+## 🏗️ Tech 
 
-# *React*	Core SPA framework
-# *React Router v6*	Dynamic and protected routing
-# *Context API*	Global state (auth, user data, task data)
-# *CSS Modules*	Component-scoped styling
-# *HTML5 Forms*	Input restrictions, validation
-# *React Icons*	Eye / show-hide toggle on password field
+- *React*	Core SPA framework
+- *React Router v6*	Dynamic and protected routing
+- *Context API*	Global state (auth, user data, task data)
+- *CSS Modules*	Component-scoped styling
+- *HTML5 Forms*	Input restrictions, validation
+- *React Icons*	Eye / show-hide toggle on password field
 
 
-⸻
+
 
 ## 💡 Key Features
 - Role-Based Login System
@@ -250,7 +250,7 @@ For demonstration and quick testing, feel free to log in as any of the existing 
 - User-based Dynamic UI
 - Image placeholder support (structure ready to accept employee profile images)
 
-⸻
+
 
 ## 🧪 Realistic UX Additions
 -	URL sharing support: User can open shared link, log in, and view only permitted data.
@@ -258,7 +258,7 @@ For demonstration and quick testing, feel free to log in as any of the existing 
 -	Navigation protection: Back button behavior logs out immediately (to be improved in future).
 -	Logout button: Clears user session and returns to /.
 
-⸻
+
 
 ## 🤝 Final Thoughts
 
@@ -272,11 +272,11 @@ Try it, break it, fix it, and maybe improve it 😉. You can fork this repo and 
 
 **Happy Hacking!** 🚀
 
-⸻
+
 
 🙋‍♂️ Built by ***Nitin Saini***
 
-# LinkedIn → www.linkedin.com/in/passenger-1o8
+ LinkedIn → www.linkedin.com/in/passenger-1o8
 
-⸻
+
 Use freely, but give credit if you love it ❤️
