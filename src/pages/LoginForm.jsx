@@ -98,7 +98,7 @@ const LoginForm = () => {
           type="text"
           className={`input ${errors.email ? "error" : ""} ${shake ? "shake" : ""}`}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.toLowerCase())}
           placeholder="Enter email (e.g. user@saini.com)"
         />
         </label>
