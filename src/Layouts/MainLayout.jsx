@@ -13,6 +13,7 @@ export default function MainLayout () {
 
     function handleLogout(){
         secret.setLoginCred(prev => ({...prev,isLogged:false,emp:null,isAdmin:false}))
+        console.log("logged out")
         navigate("/")
     }
 

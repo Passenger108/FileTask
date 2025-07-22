@@ -7,7 +7,7 @@ export default function AuthRequired () {
 
     const secret = React.useContext(LoginContext);
     const location = useLocation();
-    console.log(secret.loginCred)
+    console.log("auth checking", secret.loginCred)
 
     if(secret.loginCred.isLogged)
         return <Outlet/>

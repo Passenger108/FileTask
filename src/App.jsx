@@ -11,6 +11,7 @@ import MainLayout from "./Layouts/MainLayout"
 import LoginForm from "./pages/LoginForm"
 import AdminPage from "./pages/AdminPage"
 import UserPage from "./pages/UserPage"
+import EditEmployeePage from "./pages/EditEmployeePage"
 import CreateTaskPage from "./pages/CreateTaskPage"
 import CreateNewEmployee from "./pages/CreateNewEmployee"
 import Employees from "./pages/Employees"
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="admin/createnewemployee" element={<CreateNewEmployee/>}/>
           <Route path="admin/employees" element={<Employees/>}/>
           <Route path="admin/employees/:id" element={<EmpDetailLayout/>} />
+          <Route path="admin/employees/:id/edit" element={<EditEmployeePage/>}/>
         </Route>
 
       </Route>
