@@ -12,7 +12,7 @@ export default function MainLayout () {
     const navigate = useNavigate();
 
     function handleLogout(){
-        secret.setLoginCred({isLogged:false,emp:null,isAdmin:false})
+        secret.setLoginCred(prev => ({...prev,isLogged:false,emp:null,isAdmin:false}))
         navigate("/")
     }
 

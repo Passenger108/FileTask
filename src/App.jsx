@@ -1,6 +1,7 @@
 import React from "react"
 import {BrowserRouter, Routes, Route } from "react-router-dom"
 import {employees} from "./utils/data"
+import { adminList } from "./utils/adminList"
 
 import DataContext from "./ context/DataContext"
 import LoginContext from "./ context/LoginContext"
@@ -24,7 +25,7 @@ import AuthRequired from "./components/AuthRequired"
 export default function App() {
 
   const [database, setDatabase] = React.useState(employees)
-  const[loginCred, setLoginCred] = React.useState({isLogged:false,emp:null,isAdmin:false})
+  const[loginCred, setLoginCred] = React.useState({isLogged:false,emp:null,isAdmin:false,adminList})
 
   return (
     <DataContext.Provider value={{database,setDatabase}}>

@@ -15,7 +15,7 @@ const LoginForm = () => {
   const secret = React.useContext(LoginContext);
 
   if(secret.loginCred.isLogged)
-      secret.setLoginCred({isLogged:false,emp:null,isAdmin:false})
+      secret.setLoginCred(prev => ({...prev,isLogged:false,emp:null,isAdmin:false}))
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -49,16 +49,22 @@ const LoginForm = () => {
       // console.log(" Login successful:", { email, password });
       // login logic...
 
-      let emailQueryEntry,passwordQueryStat;
+      let emailQueryEntry,passwordQueryStat,adminQueryEntry,adminPasswordQueryStat;
 
       emailQueryEntry = server.database.find(emp=>emp.email==email.toLowerCase())
       passwordQueryStat = emailQueryEntry?.password == password
-      let goodCred = passwordQueryStat && emailQueryEntry;
-      if(goodCred||email.trim()=="nitin@saini.com"){
+
+      adminQueryEntry = secret.loginCred.adminList.find(admin=>admin.email==email.toLowerCase())
+      adminPasswordQueryStat = adminQueryEntry?.password == password
+      
+      let goodCred = passwordQueryStat && emailQueryEntry || adminPasswordQueryStat&&adminQueryEntry;
+      if(goodCred){
         let loginCred = {isLogged:true,emp:goodCred,isAdmin:false}
-        if(email.trim()=="nitin@saini.com")
+        if(adminQueryEntry)
           loginCred.isAdmin = true;
-        secret.setLoginCred(loginCred);
+
+
+        secret.setLoginCred(prev =>({...prev,...loginCred}));
 
         const previledgedRoute = location.state?.pathname.includes("admin");
         console.log("redirect",location.state?.pathname)
@@ -77,9 +83,9 @@ const LoginForm = () => {
       setPassword("");
     }else{
         const newErrors = {}
-        if(!emailQueryEntry)
+        if(!adminQueryEntry && !emailQueryEntry)
             newErrors.email = "No Such User Exit!"
-        else if(!passwordQueryStat)
+        else if(!passwordQueryStat && !adminPasswordQueryStat )
             newErrors.password = "Wrong Password bro !"
 
         setErrors(newErrors)

@@ -1,4 +1,4 @@
-const adminList = [
+export const adminList = [
     {
     id: 108,
     name: "Nitin Saini",
