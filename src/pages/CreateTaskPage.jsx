@@ -81,8 +81,10 @@ const CreateTaskPage = () => {
     let newTaskList = [...targetEmp.tasks,newTask]
     let newDatabase = employees.filter(emp=>emp.id!=formData.assignedTo)
     targetEmp = {...targetEmp,nextId:nextId+1,tasks:newTaskList,taskCounts:{...targetEmp.taskCounts,newTask:targetEmp.taskCounts.newTask+1}}
-    console.log("new database",[...newDatabase,targetEmp])
-    server.setDatabase([...newDatabase,targetEmp])
+    newDatabase = [...newDatabase,targetEmp];
+    newDatabase.count = employees.count + 1;
+    console.log("new database",newDatabase)
+    server.setDatabase(newDatabase)
 
      navigate(-1)
   };

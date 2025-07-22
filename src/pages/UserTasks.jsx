@@ -27,7 +27,9 @@ const UserTasks = ({ user }) => {
 
       tasks = tasks.map(task => ( task.id!=targetTaskId? task: ({...task,status:newStatus})))
 
-      server.setDatabase(old =>old.map(emp => (emp.id!=secret.loginCred.emp.id)?emp:{...emp,taskCounts,tasks}))
+      const newDatabase = server.database.map(emp => (emp.id!=secret.loginCred.emp.id)?emp:{...emp,taskCounts,tasks})
+      newDatabase.count = server.database.count + 1;
+      server.setDatabase(newDatabase)
       console.log("Updated loggin:",secret.loginCred.emp)
       secret.setLoginCred((loginCred)=>({...loginCred,emp:({...loginCred.emp,taskCounts,tasks})}))
     }
