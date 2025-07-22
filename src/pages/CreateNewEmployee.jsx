@@ -47,12 +47,16 @@ const CreateNewEmployee = () => {
     } else if (!formData.email.toLowerCase().endsWith("@saini.com") ) {
       newErrors.email = 'Valid Email : example@saini.com';
       console.log("email format wrong")
+    }else if(employees.find(emp=>emp.email==formData.email.toLowerCase())){
+      newErrors.email = 'Email already exist!'
     }
     
     if (!formData.password.trim()) {
       newErrors.password = 'Password is required, Admin!';
       console.log("password required")
-    } 
+    } else if (formData.password.length<3){
+      newErrors.password= 'you lazy, enter atleast 3 chars'
+    }
     return newErrors;
   };
 
