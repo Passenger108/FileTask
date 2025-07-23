@@ -27,6 +27,24 @@ This is my take on a realistic system that:
 As the sole creator and developer, I aimed to showcase strong **frontend design**, **routing**, **state management**, **validation**, and **user-based UI rendering** in a creative and structured way.
 
 ---
+## 📸 Screenshots
+
+<details>
+  <summary>📸 Click to view screenshots</summary>
+  <br />
+  <div style="white-space: nowrap; overflow-x: auto;">
+    <img src="./screenshots/Login Form SS.png" alt="Login Form" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Admin DashBoard SS.png" alt="Admin Dashboard" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Add Employee Form SS.png" alt="Add Employee Form" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Edit Form SS.png" alt="Edit Form" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Employee DashBoard SS.png" alt="Employee Dashboard" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Employee Control Panel SS.png" alt="Employee Control Panel" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Employee List SS.png" alt="Employee List" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Employee TaskBoard SS.png" alt="Employee TaskBoard" width="300" style="display: inline-block; margin-right: 10px;" />
+    <img src="./screenshots/Task Form SS.png" alt="Task Form" width="300" style="display: inline-block; margin-right: 10px;" />
+  </div>
+</details>
+
 
 ## 🧠 What Is This Project About?
 
@@ -40,12 +58,63 @@ As the sole creator and developer, I aimed to showcase strong **frontend design*
 - ➕ Add new employees
 - ✅ Assign tasks to any employee
 - 📊 View the history of all tasks assigned to a specific employee
+- ✏️ Edit details of existing employees (correct name and change password)
 
 ### 👷 Employees can:
 - 🔐 Login with personal credentials
 - 📋 View all tasks assigned to them
 - 🎛️ Accept newly assigned tasks
 - ✔️ Mark active tasks as either **Complete** or **Failed**
+
+
+
+
+
+## 🧪 Want to Explore the App?
+
+🌐 https://filetask.netlify.app/
+
+Play with the app and test every route. Log in either as Admin or Employee:
+
+For demonstration and quick testing, feel free to log in as any of the existing users or the admin to test every feature with ease.
+
+
+
+## 🧪 Test Users
+
+### 👤 Employee Users
+
+- 📝 All employees share the same short password just for fast testing. When creating a new employee, Admin can assign stronger passwords (if feeling evil 😈).
+- | Email              | Password |
+- |--------------------|----------|
+- | ravi@saini.com     | 123      |
+- | simran@saini.com   | 123      |
+- | arjun@saini.com    | 123      |
+- | meena@saini.com    | 123      |
+- | aman@saini.com     | 123      |
+- | tanya@saini.com    | 123      |
+- | karan@saini.com    | 123      |
+- | pooja@saini.com    | 123      |
+- | nikhil@saini.com   | 123      |
+- | divya@saini.com    | 123      |
+- | ritika@saini.com   | 123      |
+- | yash@saini.com     | 123      |
+
+### 👑 Admin
+
+| Email            | Password |
+|------------------|----------|
+| nitin@saini.com  | 123      |
+
+---
+
+💡 _Want to give a hard time to your employee? Assign them a crazy password while creating a new one._  
+**PS:** You must be the **Admin** for that 😉
+
+
+
+
+
 
 ## 🎯 Core Features
 
@@ -54,6 +123,7 @@ As the sole creator and developer, I aimed to showcase strong **frontend design*
   - ✅ Create new tasks for employees.
   - ➕ Add new employees to the database.
   - 📊 View status/history of assigned tasks per employee.
+  - ✏️ Edit details of existing employees (correct name and change password)
 - 👷‍♂️ **Employee Dashboard (User)**:
   - 📋 View tasks assigned to them.
   - 🎛️ Accept or mark tasks as completed/failed.
@@ -104,7 +174,7 @@ This section outlines the key architectural and UI decisions that shaped the pro
 - `/filetask/admin/createnewemployee` → Add a new employee  
 - `/filetask/admin/employees` → View all employees and their tasks  
 - `/filetask/admin/employees/:id` → View task history for a specific employee
-
+- `/filetask/admin/employees/:id/edit` → Edit employee name and password 
 ---
 
 # 👨‍💻 Employee-Only Routes (🔒 Protected)
@@ -178,50 +248,6 @@ To simplify session management:
 - **Logout** clears login state and redirects users to the home page (`/`).
 - If users try to **navigate back from their dashboard**, they are automatically logged out to prevent inconsistent or unauthorized states.
 - I might refine this UX in future versions using **confirmation popups** instead of abrupt logouts.
-
-
-
-## 🧪 Want to Explore the App?
-
-🌐 https://filetask.netlify.app/
-
-Play with the app and test every route. Log in either as Admin or Employee:
-
-For demonstration and quick testing, feel free to log in as any of the existing users or the admin to test every feature with ease.
-
-
-
-## 🧪 Test Users
-
-### 👤 Employee Users
-
-- 📝 All employees share the same short password just for fast testing. When creating a new employee, Admin can assign stronger passwords (if feeling evil 😈).
-- | Email              | Password |
-- |--------------------|----------|
-- | ravi@saini.com     | 123      |
-- | simran@saini.com   | 123      |
-- | arjun@saini.com    | 123      |
-- | meena@saini.com    | 123      |
-- | aman@saini.com     | 123      |
-- | tanya@saini.com    | 123      |
-- | karan@saini.com    | 123      |
-- | pooja@saini.com    | 123      |
-- | nikhil@saini.com   | 123      |
-- | divya@saini.com    | 123      |
-- | ritika@saini.com   | 123      |
-- | yash@saini.com     | 123      |
-
-### 👑 Admin
-
-| Email            | Password |
-|------------------|----------|
-| nitin@saini.com  | 123      |
-
----
-
-💡 _Want to give a hard time to your employee? Assign them a crazy password while creating a new one._  
-**PS:** You must be the **Admin** for that 😉
-
 
 
 

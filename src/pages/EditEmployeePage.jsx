@@ -4,21 +4,25 @@ import './EditEmployeePage.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // import { employees } from '../utils/data'; 
 
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useLocation} from "react-router-dom"
 
 const EditEmployeePage = () => {
     console.log("Edit Employee Page")
+    const server = useContext(DataContext);
+    const employees = server.database
+    const location = useLocation();
+    const idDetail = location.pathname.split('/')[4];
+    const targetEmpData = employees.find(emp=>emp.id == idDetail )
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password : ''
+    name: targetEmpData.name,
+    email: targetEmpData.email,
+    password : targetEmpData.password
   });
   const [errors, setErrors] = useState({});
   const[showPassword,setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const server = useContext(DataContext);
-  const employees = server.database
 
    function handleEye(){
     setShowPassword(value=>!value)
@@ -40,16 +44,6 @@ const EditEmployeePage = () => {
     }else if(formData.name.trim().split(' ').length < 2){
         newErrors.name = 'Enter full Name'
     }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required, Admin!';
-      console.log("email requied")
-    } else if (!formData.email.toLowerCase().endsWith("@saini.com") ) {
-      newErrors.email = 'Valid Email : example@saini.com';
-      console.log("email format wrong")
-    }else if(employees.find(emp=>emp.email==formData.email.toLowerCase())){
-      newErrors.email = 'Email already exist!'
-    }
     
     if (!formData.password.trim()) {
       newErrors.password = 'Password is required, Admin!';
@@ -68,22 +62,19 @@ const EditEmployeePage = () => {
       return;
     }
 
-    alert('employee added Successfully!');
+    alert('employee edited Successfully!');
     // handling new employee  addition logic ...
     let newEmployee = {
-        id:employees.count + 1,
+      ...targetEmpData,
         name:formData.name.split(' ').map(word=>word[0].toUpperCase()+word.slice(1)).join(' '),
-        email:formData.email.toLowerCase(),
-        password:formData.password,
-        nextId:1,
-        taskCounts: { active: 0, newTask: 0, completed: 0, failed: 0 },
-        tasks:[]
+        password:formData.password
     }
-    let newEmployees =[...employees,newEmployee];
-    newEmployees.count = employees.count + 1;
+    let restEmployees = employees.filter(emp=>emp.id != idDetail)
+    let newEmployees =[...restEmployees,newEmployee];
+    newEmployees.count = employees.count;
     server.setDatabase(newEmployees);
-    console.log("New Employee Added", newEmployee)
-    console.log("Updated Database", server.database)
+    console.log(" Employee was edited", newEmployee)
+    console.log("Updated Database", newEmployees)
 
     navigate(-1);
   };
@@ -101,6 +92,7 @@ const EditEmployeePage = () => {
               type={field === "password" && !showPassword ? 'password': 'text'}
               id={field}
               value={formData[field]}
+              disabled={field == 'email'}
               onChange={handleChange}
               className={errors[field] ? 'ccerror' : ''}
               placeholder={`Enter ${field}`}
@@ -111,7 +103,7 @@ const EditEmployeePage = () => {
           </div>
         ))}
 
-        <button className="new-btn" onClick={handleSubmit}>Add Employee</button>
+        <button className="new-btn" onClick={handleSubmit}>Edit Details</button>
       </div>
     </div>
   );
